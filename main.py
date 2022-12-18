@@ -1,11 +1,8 @@
 class Node:
     def __init__(self, id, parent, answer): self.up, self.right, self.down, self.left, self.parent, self.name, self.id, self.answer = None, None, None, None, parent, "n", id, answer
-    def __repr__(self): return f"N{self.id}"
 
 class Header:
     def __init__(self, id): self.up, self.right, self.down, self.left, self.total_1, self.name, self.id, self.parent = None, None, None, None, 0, "h", id, self
-
-    def __repr__(self): return f"H{self.id}"
 
 def create_nodes(id1, id2, id3, id4, header_list, copy_list, answer):
     p1, p2, p3, p4 = header_list[id1], header_list[id2], header_list[id3], header_list[id4]
@@ -65,8 +62,6 @@ def get_min_col(initial):
     return min_node
 
 
-
-    
 def cover(node):
     before = col = node.parent
     col.left.right = col.right
